@@ -453,6 +453,9 @@
         "slides_speed": {
           "label": "Slides speed"
         },
+        "presets": {
+          "name": "Moving announcement bar"
+        }
       }
     },
     "announcement-bar": {
