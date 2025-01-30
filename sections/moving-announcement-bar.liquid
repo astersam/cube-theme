@@ -1,3 +1,29 @@
+{%- liquid
+    if section.blocks.size > 0
+      assign announcement_bar = true
+    endif
+-%}
+
+<div
+  class="
+    utility-bar color-{{ section.settings.color_scheme }}
+    gradient
+    {% if section.settings.show_line_separator and section.blocks.size > 0 %}
+    utility-bar--bottom-border
+    {% endif %}
+  "
+  {{ block.shopify_attributes }}
+>
+  <div
+    class="
+      page-width utility-bar__grid
+      {% if announcement_bar %}
+       utility-bar__grid--3-col
+      {% endif %}
+    "
+  ></div>
+</div>
+
 {% schema %}
 {
   "name": "t:sections.moving-announcement-bar.name",
@@ -26,7 +52,7 @@
       "step": 1,
       "label": "t:sections.moving-announcement-bar.settings.slides_speed.label",
       "default": 4
-    },
+    }
   ],
   "blocks": [
     {
